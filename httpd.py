@@ -50,6 +50,9 @@ import os
 import sys
 lastArg=''
 for arg in sys.argv:
+    if arg=='--help':
+      usage()
+      quit()	
     if lastArg=='--pid' and os.path.exists(arg):
         pid=os.getpid()
         f=open(arg,'w')
