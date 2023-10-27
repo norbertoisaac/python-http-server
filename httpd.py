@@ -2,6 +2,11 @@
 import http.server
 import socket
 
+def usage():
+  print('''
+	--pid /path/to/pid/archive
+	''')
+
 class localHttpServerIPv6(http.server.ThreadingHTTPServer):
     address_family = socket.AF_INET6
 
