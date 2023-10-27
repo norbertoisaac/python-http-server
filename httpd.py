@@ -40,6 +40,17 @@ class httpServerHandler( http.server.BaseHTTPRequestHandler):
 
     #def do_PUT(self):
     #    None
+
+import os
+import sys
+lastArg=''
+for arg in sys.argv:
+    if lastArg=='--pid' and os.path.exists(arg):
+        pid=os.getpid()
+        f=open(arg,'w')
+        f.write(str(pid))
+        f.close()
+    lastArg = arg
 ###############
 # Un solo hilo
 #httpServer = http.server.HTTPServer(('127.0.0.1',8000), httpServerHandler)
