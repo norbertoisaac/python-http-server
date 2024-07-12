@@ -35,7 +35,7 @@ class httpServerHandler( http.server.BaseHTTPRequestHandler):
         # If someone went to "http://something.somewhere.net/foo/bar/",
         # then s.path equals "/foo/bar/".
         import time
-        print('llego un GET'+time.ctime())
+        print('llego un GET '+time.ctime())
         time.sleep(5)
         body = "<p>You accessed path: %s</p>" % self.path
         self.sendResponseBody(body.encode())
